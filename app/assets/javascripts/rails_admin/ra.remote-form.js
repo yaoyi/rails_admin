@@ -40,8 +40,8 @@
     _bindModalOpening: function(e, url) {
       e.preventDefault();
       widget = this;
-      if($("#modal").length)
-        return false;
+      // if($("#modal").length)
+      //   return false;
 
       var dialog = this._getModal();
 

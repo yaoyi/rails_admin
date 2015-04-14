@@ -62,10 +62,10 @@ $(document).on 'rails_admin.dom_ready', (e, content) ->
 
     content.find('[data-filteringmultiselect]').each ->
       $(this).filteringMultiselect $(this).data('options')
-      if $(this).parents("#modal").length # hide link if we already are inside a dialog (endless issues on nested dialogs with JS)
-        $(this).parents('.control-group').find('.btn').remove()
-      else
-        $(this).parents('.control-group').first().remoteForm()
+      # if $(this).parents("#modal").length # hide link if we already are inside a dialog (endless issues on nested dialogs with JS)
+      #   $(this).parents('.control-group').find('.btn').remove()
+      # else
+      $(this).parents('.control-group').first().remoteForm()
 
     # filtering-select
 
