@@ -172,6 +172,28 @@
             );
           }
         }
+        function getImage(id){
+          for(var i in _collection){
+            photo = _collection[i]
+            if(photo.id == id){
+              return photo.image.url
+            }
+          }
+          return '';
+        }
+        $(".ra-multiselect-left option").each(function(){
+          $(this).attr('title', '');
+        })
+        $(".ra-multiselect-left option").tooltip({
+          container: '.content',
+          placement: 'left',
+          html: true,
+          title: function () {
+            var id = $(this).val();
+            var image = getImage(id);
+            return '<img style="width:100%;" src="' + 'http://' + window.location.host + image + '"></img>';
+          }
+        })
       });
     },
 
